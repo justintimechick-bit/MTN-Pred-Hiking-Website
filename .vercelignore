@@ -1,0 +1,16 @@
+**/*.xlsx
+**/*.xls
+**/*.xlsm
+**/*.csv
+**/*.tsv
+/*.html
+/Mountain_Predators_Website_Research_and_Prompts.md
+MTN PDTR - Roster Sheet.xlsx
+MTN PREDATORS Public Basecamp (Copy).html
+Mountain_Predators_Website_Research_and_Prompts.md
+private/
+originals/
+artifacts/
+.env*
+.git/
+tests/

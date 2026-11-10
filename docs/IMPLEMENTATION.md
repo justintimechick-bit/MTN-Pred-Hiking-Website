@@ -1,0 +1,34 @@
+# Implementation record
+
+November 10, 2026. Built from scratch after the owner confirmed the supplied files are inspiration and approved the seven trip records. The historical HTML and research markdown were read locally. The private workbook was left untouched and was not imported, copied, committed, served, or uploaded.
+
+| Phase | Result | Checks and remaining inputs |
+| --- | --- | --- |
+| 1 — Foundation | Next.js App Router and TypeScript; responsive shell; centralized brand/contact/domain configuration; strict public schemas; seven trip records; all requested routes; optional approved Markdown recaps and photos. | Aggregation, published/completed rules, month precision, combined counting, state deduplication, null metrics, and privacy validation tests. No approved profiles. |
+| 2 — Visual identity | Large condensed wordmark; forest, off-white, rust, and trail-yellow palette; contour placeholders explicitly labeled as development assets; home sections, factual statistics, featured/latest trips, story, and partnership invitation. | Responsive CSS, visible focus, skip link, mobile menu, reduced motion. Final hero and crew photography remain pending. |
+| 3 — Archive and journey | Seven static adventure detail routes; year/state filters with reset and empty state; chronological journey; annual totals and documented-route sources; real 404 route. | Shared content tests demonstrate an added published trip changes totals and yearly history. No invented recaps, map geometry, GPX tracks, exact days, or goals. |
+| 4 — Real photographs | Pending. No photographs were supplied or fabricated. Approved-photo inventory schema and `next/image` replacement points are ready. | Requires owner images, permission records, confirmed associations, metadata removal, inventory review, final crops, and accessible gallery/lightbox verification on real images. |
+| 5 — Partnership page | Documented evidence and four potential discussion options; configured group-email contact path; no claims of existing sponsors, reach, or services already contracted. | No configured group email, so contact action is absent and a factual empty state appears. No inquiries were sent. No form/provider was configured. |
+| 6 — Release preparation | Per-page metadata; domain-gated canonicals, sitemap and social images; noindex defaults and preview protection; typography-only social image; source exclusion rules; public asset and rendered-output audits; maintenance README. | Local release candidate only. Final domain, group contact, brand confirmation, approved photos, and actual deployment review remain. No production deployment or remote push. |
+
+The production output prerenders all public pages. No source workbook, historical operations data, unapproved profiles, speculative business targets, or unlaunched social handles are needed by the application. The checks deliberately do not read the workbook or create a private surname denylist. Text approval remains a human responsibility; automated validation cannot infer personal identity from arbitrary prose.
+
+Validation commands and browser observations are recorded after final review below. No Lighthouse score or audience/performance claim is assumed.
+
+## Verification evidence
+
+- `npm run check` passed: Biome lint, TypeScript, 11 meaningful content/filter/privacy tests, strict content and asset validation, the production build, and rendered-output audit.
+- A clean `npm ci --offline` reproduced the dependency installation from the lockfile, followed by another successful complete check. Current stable Next.js, React, TypeScript, and Biome releases are pinned. The local system Node installation was not modified; verification used a temporary Node 24 runtime.
+- The production build prerendered the home, archive, all seven adventure pages, story, journey, partnership page, 404, robots, sitemap, favicon, and typography-only share image.
+- HTTP smoke checks passed on all 12 content pages, with unique brand-bearing titles, noindex metadata, absent unconfigured contact/canonical actions, and security headers. Five missing/private-source paths returned 404, including the actual workbook and historical HTML paths. Robots disallows indexing, the unconfigured sitemap has no URLs, and the share image returns PNG successfully. The temporary local server was stopped afterward.
+- Git ignore rules were tested in a temporary empty repository using the three attachment filenames only. All three were ignored; no attachment contents were copied or read for this check.
+- The audit checked 74 rendered artifacts and 14 deployment tracing manifests. No raw attachment references were present in deployment tracing. Built HTML has no fabricated canonical domain or localhost social-image URL. Email actions are absent without configuration; default robots metadata is noindex.
+- Native Edge desktop review produced screenshots of the homepage and archive. Text, placeholder labels, navigation, and archive rows were readable. The 2026 filter visibly returned three trips. Filter composition, no-results matching, sorting, and reset-to-all selection data are also covered by the shared filter test.
+- The in-app browser was unavailable. Native browser control did not provide a reliable mobile emulation session and the browser was subsequently in use elsewhere. **Mobile screenshots, mobile menu interaction, and device-level overflow/focus verification remain unverified.** Responsive styles, 320px wordmark sizing, focus styles, semantic navigation, and reduced-motion handling were reviewed in source. Complete real-device/mobile QA before launch.
+- No real photographs, identifiable member portraits, approved recaps, confirmed social accounts, or partner claims were supplied. The photo inventory/permission/crop/lightbox portion of phase 4 remains pending. Performance measurements on real photography are also pending.
+
+The owner still needs to confirm the final name and supply approved photographs, the shared group inbox, and the production domain. Social accounts, member profiles, goals, and recaps are optional and stay omitted until approved. Production indexing requires an explicit environment switch. At the end of the initial implementation, no source attachments or inquiries were sent, no remote repository was pushed, and no deployment was made.
+
+## GitHub handoff
+
+The owner subsequently authorized pushing the website source to [justintimechick-bit/MTN-Pred-Hiking-Website](https://github.com/justintimechick-bit/MTN-Pred-Hiking-Website). The target was verified as an empty public repository before preparing the initial commit on `main`. Only the website source, public allowlist, tests, configuration, and maintainer documentation are included. Source attachments, local environment files, dependencies, and build artifacts remain excluded. This code handoff does not create or authorize a Vercel production deployment.

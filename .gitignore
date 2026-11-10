@@ -1,0 +1,20 @@
+node_modules/
+.next/
+out/
+coverage/
+.vercel/
+.env*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+artifacts/
+# Source attachments stay local. Never stage with --force.
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.tsv
+/*.html
+/Mountain_Predators_Website_Research_and_Prompts.md
+private/
+originals/

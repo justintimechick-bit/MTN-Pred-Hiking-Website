@@ -1,0 +1,39 @@
+{
+  "name": "mountain-predators-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "npm run validate:content && next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome lint src scripts tests",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "validate:content": "node --env-file-if-exists=.env.local --import tsx scripts/validate-content.ts",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build && npm run audit:output",
+    "audit:output": "node --env-file-if-exists=.env.local --import tsx scripts/audit-output.ts"
+  },
+  "dependencies": {
+    "@fontsource/barlow-condensed": "5.3.0",
+    "@fontsource/source-sans-3": "5.3.1",
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-markdown": "10.1.0",
+    "server-only": "0.0.1",
+    "sharp": "0.35.5",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "tsx": "4.23.15",
+    "@biomejs/biome": "2.6.6",
+    "typescript": "7.0.2"
+  }
+}
