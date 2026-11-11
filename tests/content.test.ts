@@ -104,7 +104,11 @@ test("duplicate identities and unapproved photo references fail validation", () 
     false,
   );
   assert.equal(
-    contentSchema.safeParse({ ...data, trips: [{ ...data.trips[0], images: ["p-0001"] }] }).success,
+    contentSchema.safeParse({
+      ...data,
+      photos: [],
+      trips: [{ ...data.trips[0], images: ["p-0001"] }],
+    }).success,
     false,
   );
 });

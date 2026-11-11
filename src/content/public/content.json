@@ -101,6 +101,7 @@
       "id": "t-007",
       "slug": "t-007",
       "title": "Grayson Highlands and Mount Rogers Loop",
+      "images": ["p-0002"],
       "month": "2026-09",
       "datePrecision": "month",
       "region": "Grayson Highlands State Park",
@@ -115,5 +116,26 @@
     }
   ],
   "profiles": [],
-  "photos": []
+  "photos": [
+    {
+      "id": "p-0001",
+      "publicApproval": true,
+      "metadataRemoved": true,
+      "filename": "p-0001.webp",
+      "alt": "A group of hikers with backpacks standing together among wildflowers and evergreen trees beneath a cloudy sky.",
+      "width": 2048,
+      "height": 1536,
+      "focalPoint": [50, 62]
+    },
+    {
+      "id": "p-0002",
+      "publicApproval": true,
+      "metadataRemoved": true,
+      "filename": "p-0002.webp",
+      "alt": "Hikers taking a break among rocky outcrops, shrubs and wildflowers, with backpacks and trekking poles beneath a cloudy sky.",
+      "width": 2048,
+      "height": 1536,
+      "focalPoint": [50, 55]
+    }
+  ]
 }

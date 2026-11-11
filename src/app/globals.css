@@ -316,6 +316,9 @@ svg {
   background: var(--pine);
   color: #e6eddf;
 }
+.hero-image > .has-photo {
+  aspect-ratio: 12 / 5;
+}
 .hero-image .contours {
   opacity: 0.3;
 }
@@ -395,6 +398,11 @@ svg {
 }
 .featured .photo {
   height: 430px;
+}
+.featured > .photo.has-photo {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  min-height: 0;
 }
 .featured time {
   font-size: 0.95rem;
@@ -1086,6 +1094,10 @@ svg {
   }
   .hero-image > .photo {
     min-height: 350px;
+  }
+  .hero-image > .has-photo {
+    aspect-ratio: 4 / 3;
+    min-height: 0;
   }
   .hero-image .placeholder-note {
     margin-bottom: 40px;

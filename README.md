@@ -55,7 +55,9 @@ For an approved recap, create `src/content/public/recaps/t-008.md` and set `reca
 
 ## Photographs
 
-Photo integration is pending owner-supplied, permissioned photographs. Current green contour panels explicitly say **Development photo placeholder** and do not depict any real location or trip.
+The homepage uses owner-supplied photo `p-0001`, explicitly approved for that placement on November 11, 2026. Its WebP derivative has identifying metadata removed and is registered in the public photo inventory. No trip association or personal identification is inferred. Remaining green contour panels explicitly say **Development photo placeholder** and do not depict any real location or trip.
+
+Photo `p-0002` was owner-supplied and approved on November 11, 2026 for the Grayson Highlands and Mount Rogers Loop latest-adventure feature. Its metadata-stripped WebP is registered with trip `t-007`, supplying the homepage feature, archive card and trip page. The homepage feature preserves the full photograph on desktop and mobile. No people are identified.
 
 Keep originals outside this repository in private local storage. Before adding a public derivative, record permission and confirmed trip association, inspect the image, strip EXIF/IPTC/XMP and location metadata, and rename it with a non-name ID such as `p-0001.webp`. Do not send source attachments to external services. An image inventory needs orientation, placement, focal point, factual alt text, and any approved first-name-only credit. Never identify a person from their face.
 
