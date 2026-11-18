@@ -3,10 +3,11 @@ import path from "node:path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
-import { trips, getTrip } from "@/lib/content";
+import { trips, getTrip, getTrack, getBasemap } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
 import { formatMonth, miles, feet, stateNames } from "@/lib/trips";
 import { Photo } from "@/components/photo";
+import { RouteMap } from "@/components/route-map";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -29,6 +30,7 @@ export default async function Adventure({ params }: Props) {
   const recap = trip.recap
     ? await readFile(path.join(process.cwd(), "src/content/public/recaps", trip.recap), "utf8")
     : null;
+  const track = await getTrack(trip);
   return (
     <article className="container page-content adventure-detail">
       <Link href="/adventures" className="back-link">
@@ -69,8 +71,12 @@ export default async function Adventure({ params }: Props) {
           )}
           <p className="metric-note">
             Source: the crew’s approved trip history. Figures describe the documented route, not
-            verified GPX distance or elevation measurements. The exact hiking days and track are not
-            recorded here.
+            verified GPX distance or elevation measurements.{" "}
+            {track?.source === "recorded-gps"
+              ? "The route map shows the crew’s approved recorded track; exact hiking days are not recorded here."
+              : track
+                ? "The route map is an approximate published route, not a GPS recording. The exact hiking days and track are not recorded here."
+                : "The exact hiking days and track are not recorded here."}
           </p>
         </div>
         <aside className="trip-facts" aria-label="Trip facts">
@@ -106,6 +112,14 @@ export default async function Adventure({ params }: Props) {
           </dl>
         </aside>
       </div>
+      {track && (
+        <section className="section route-section" aria-labelledby="route-heading">
+          <h2 id="route-heading">
+            {track.source === "recorded-gps" ? "The route we took" : "The route"}
+          </h2>
+          <RouteMap track={track} title={trip.title} basemap={getBasemap(trip)} />
+        </section>
+      )}
       {(trip.images?.length ?? 0) > 1 && (
         <section className="section">
           <h2>From the trip</h2>

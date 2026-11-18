@@ -15,7 +15,9 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "validate:content": "node --env-file-if-exists=.env.local --import tsx scripts/validate-content.ts",
     "check": "npm run lint && npm run typecheck && npm test && npm run build && npm run audit:output",
-    "audit:output": "node --env-file-if-exists=.env.local --import tsx scripts/audit-output.ts"
+    "audit:output": "node --env-file-if-exists=.env.local --import tsx scripts/audit-output.ts",
+    "import:track": "node --import tsx scripts/import-track.ts",
+    "fetch:basemap": "node --import tsx scripts/fetch-basemap.ts"
   },
   "dependencies": {
     "@fontsource/barlow-condensed": "5.3.0",

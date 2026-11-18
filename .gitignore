@@ -18,3 +18,9 @@ artifacts/
 /Mountain_Predators_Website_Research_and_Prompts.md
 private/
 originals/
+# Raw GPS recordings stay local; only coordinates-only tracks are public.
+*.gpx
+*.fit
+*.tcx
+*.kml
+*.kmz

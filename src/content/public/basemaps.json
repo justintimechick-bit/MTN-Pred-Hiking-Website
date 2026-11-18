@@ -1,0 +1,17 @@
+[
+  {
+    "tripId": "t-007",
+    "filename": "t-007.webp",
+    "source": "usgs-national-map",
+    "layer": "USGSTopo",
+    "metadataRemoved": true,
+    "bounds": [
+      -81.564484,
+      36.627655,
+      -81.459796,
+      36.682245
+    ],
+    "width": 1600,
+    "height": 1040
+  }
+]

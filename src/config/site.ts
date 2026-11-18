@@ -30,7 +30,7 @@ export const site = {
   // Add only confirmed, available public accounts. Never proposed handles.
   socialLinks: [] as { label: string; url: string }[],
   heroPhotoId: "p-0001" as string | null,
-  crewPhotoId: null as string | null,
+  crewPhotoId: "p-0005" as string | null,
   // Configure an agreed goal only after the crew approves a target and period.
   goal: null as { label: string; year: number; targetMiles: number } | null,
 };

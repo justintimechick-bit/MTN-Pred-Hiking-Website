@@ -709,6 +709,122 @@ svg {
 .component-routes p {
   font-size: 1rem;
 }
+.route-section h2 {
+  margin-bottom: 24px;
+  font-size: 2.8rem;
+}
+.route-map {
+  margin: 0;
+}
+.route-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+.route-map-bg {
+  fill: var(--pale);
+}
+.route-map-terrain {
+  opacity: 0.82;
+}
+.route-map-grid {
+  fill: none;
+  stroke: #ccd6c8;
+  stroke-width: 1;
+}
+.route-map-casing,
+.route-map-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.route-map-casing {
+  stroke: var(--white);
+  stroke-width: 9;
+}
+.route-map-line {
+  stroke: var(--rust);
+  stroke-width: 4;
+}
+.route-map-start {
+  fill: var(--yellow);
+  stroke: var(--pine);
+  stroke-width: 3;
+}
+.route-map-finish {
+  fill: var(--pine);
+  stroke: var(--white);
+  stroke-width: 3;
+}
+.route-map-north path {
+  fill: var(--pine);
+}
+.route-map-north text,
+.route-map-scale text {
+  fill: var(--pine);
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: var(--white);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+.route-map-north path {
+  stroke: var(--white);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
+.route-map-scale path {
+  fill: none;
+  stroke: var(--pine);
+  stroke-width: 2.5;
+}
+.route-map figcaption {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.route-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+  color: var(--ink);
+  font-weight: 600;
+}
+.route-map-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.legend-start,
+.legend-finish,
+.legend-line {
+  display: inline-block;
+  flex: none;
+}
+.legend-start {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--yellow);
+  border: 2px solid var(--pine);
+}
+.legend-finish {
+  width: 12px;
+  height: 12px;
+  background: var(--pine);
+}
+.legend-line {
+  width: 24px;
+  height: 4px;
+  background: var(--rust);
+}
 .detail-next {
   margin-top: 72px;
   padding-top: 36px;
@@ -1269,7 +1385,8 @@ svg {
     gap: 32px;
     padding-top: 36px;
   }
-  .detail-layout h2 {
+  .detail-layout h2,
+  .route-section h2 {
     font-size: 2.5rem;
   }
   .trip-facts {

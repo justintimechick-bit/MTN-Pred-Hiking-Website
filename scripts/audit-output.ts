@@ -2,7 +2,8 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import assert from "node:assert/strict";
 import data from "../src/content/public/content.json";
-import { contentSchema } from "../src/lib/schema";
+import basemapData from "../src/content/public/basemaps.json";
+import { basemapsSchema, contentSchema } from "../src/lib/schema";
 import { publishedTrips, aggregateTrips } from "../src/lib/trips";
 import { canIndex, site } from "../src/config/site";
 
@@ -91,6 +92,25 @@ for (const trip of trips) {
     "Trip must preserve month precision",
   );
   assert.ok(!new RegExp(`${trip.month}-\\d{2}`).test(html), "Trip contains an invented exact day");
+  assert.ok(!/\d{4}-\d{2}-\d{2}T\d{2}:/.test(html), "Trip page leaks a recording timestamp");
+  assert.equal(
+    html.includes('class="route-map"'),
+    Boolean(trip.track),
+    "Route maps must appear exactly on trips with an approved track",
+  );
+  if (trip.track && html.includes("Published route"))
+    assert.ok(
+      html.includes("openstreetmap.org/copyright") && html.includes("not a GPS"),
+      "Published routes need OpenStreetMap attribution and an approximate-route label",
+    );
+  const basemap = basemapsSchema.parse(basemapData).find((map) => map.tripId === trip.id);
+  assert.equal(
+    html.includes(`/maps/${trip.id}.webp`),
+    Boolean(basemap && trip.track),
+    "Route basemaps must appear exactly where a manifest entry and approved track exist",
+  );
+  if (basemap && trip.track)
+    assert.ok(html.includes("The National Map"), "Route basemaps need USGS attribution");
 }
 console.log(
   `Audited ${files.length} rendered public artifacts, ${traceFiles.length} deployment traces, and all ${trips.length} trip pages. Raw attachments were not read.`,

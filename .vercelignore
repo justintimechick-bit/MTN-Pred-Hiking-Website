@@ -14,3 +14,8 @@ artifacts/
 .env*
 .git/
 tests/
+**/*.gpx
+**/*.fit
+**/*.tcx
+**/*.kml
+**/*.kmz
