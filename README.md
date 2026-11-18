@@ -92,7 +92,7 @@ A route map can draw its line over a static terrain image from the USGS The Nati
 1. Run `npm run fetch:basemap -- t-007` (several trip IDs are allowed; `--force` replaces an existing one). The trip must already reference an approved track. This local tool is never run by the build. It sends only the map's bounding box to USGS, re-encodes the export as WebP without metadata in `public/maps/t-007.webp`, and records the image's exact bounds in `src/content/public/basemaps.json`.
 2. Review the map with `npm run dev`, then run `npm run check`.
 
-The image is placed by its recorded bounds, so it stays aligned with the line. Validation allows only manifest-listed files in `public/maps/`, checks dimensions and metadata, and fails if a basemap no longer covers its route map (for example, after a track changes). Refetch it then. The map caption credits USGS whenever a basemap is shown. As of November 17, 2026, only `t-007` has a basemap.
+The image is placed by its recorded bounds, so it stays aligned with the line. Validation allows only manifest-listed files in `public/maps/`, checks dimensions and metadata, and fails if a basemap no longer covers its route map (for example, after a track changes). Refetch it then. The map caption credits USGS whenever a basemap is shown. As of November 18, 2026, all seven trips have a basemap.
 
 ## Photographs
 
